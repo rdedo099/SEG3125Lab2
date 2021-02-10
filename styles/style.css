@@ -47,3 +47,60 @@
   font-size: medium;
   color: white;
 }
+
+.button {
+  background-color: pink;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin:4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+}
+
+.button:hover{
+  box-shadow: 0 5px 8px 0 rgba(26, 25, 25, 0.24), 0 6px 10px 0 rgba(0,0,0,0.19);
+}
+
+#Client {
+  text-align: center;
+}
+
+#Products {
+  text-align: center;
+}
+
+#Cart {
+  text-align: center;
+}
+
+#displayProduct{
+  margin-left: 45%;
+  margin-right: 40%;
+  text-align: left;
+}
+
+#displayCart{
+  margin-left: 47%;
+  margin-right: 40%;
+  text-align: left;
+}
+
+
+#sig{
+  text-align: right;
+  color: red;
+  font-size: small;
+  font-style: italic;
+  position:fixed;
+  right:10px;
+  bottom:10px;
+  height:100px;
+}
