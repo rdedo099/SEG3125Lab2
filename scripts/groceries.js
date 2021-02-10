@@ -6,7 +6,7 @@ var products = [
 		name: "brocoli",
 		vegetarian: true,
 		glutenFree: true,
-		price: 1.99
+		price: 1.99,
 		organic: true
 	},
 	{
@@ -98,17 +98,37 @@ function restrictListProducts(prods, restriction) {
 			product_names.push(prods[i].name);
 		}
 	}
+	product_names.sort(function(a, b) {
+		var priceA, priceB;
+		for(let i = 0; i<products.length; i++){
+			if(products[i].name===a){
+				priceA = products[i].price;
+			}else if(products[i].name === b){
+				priceB = products[i].price;
+			}
+		}
+		if (priceA < priceB) return 1;
+		if (priceA > priceB) return -1;
+		return 0;
+	});
 	return product_names;
 }
 
 // Calculate the total price of items, with received parameter being a list of products
 function getTotalPrice(chosenProducts) {
+	chosenWithoutPrice = [];
+	var prod;
+	console.log(chosenProducts);
+	for(let i = 0; i<chosenProducts.length; i++){
+		prod = chosenProducts[i].split(" ")[0];
+		chosenWithoutPrice.push(prod);
+	}
+	console.log(chosenWithoutPrice);
 	totalPrice = 0;
 	for (let i=0; i<products.length; i+=1) {
-		if (chosenProducts.indexOf(products[i].name) > -1){
+		if (chosenWithoutPrice.indexOf(products[i].name) > -1){
 			totalPrice += products[i].price;
 		}
 	}
 	return totalPrice;
 }
-
